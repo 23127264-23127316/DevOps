@@ -25,25 +25,25 @@ pipeline{
 		
 		stage('Docker Tag') {
 			steps {
-				sh 'docker tag jenkins-app 23127264/jenkins-app'
+				sh 'docker tag jenkins-app 2312726423127316/jenkins-app'
 			}
 		}
 
 		stage('Push') {
 			steps {
-				sh 'docker push 23127264/jenkins-app'
+				sh 'docker push 2312726423127316/jenkins-app'
 			}
 		}
 		
 		stage('Remove current container if it exists') {
 			steps {
-				sh 'docker rm -f jenkins-mmt || true'
+				sh 'docker rm -f jenkins-cicd || true'
 			}
 		}
 		
 		stage('Run in Container') {
 			steps {
-				sh 'docker run --publish 3000:3000 --name jenkins-mmt -d --rm 23127264/jenkins-app:latest'
+				sh 'docker run --publish 3000:3000 --name jenkins-cicd -d --rm 2312726423127316/jenkins-app:latest'
 			}
 		}
 	}
