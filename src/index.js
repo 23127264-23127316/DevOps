@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('Hello Jenkins CICD - 23127264-23127316');
+  res.send('Hello Jenkins CICD test - 23127264-23127316');
 });
 
 app.listen(3000, () => {
